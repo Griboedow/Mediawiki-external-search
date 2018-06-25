@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [ "Nikolai Kochkin" ]
+	},
+	"external-search-desc": "This is an extension for external search: support, salesforce, etc.",
+	"external-search-feature-message": "Include search results from external sites",
+	"external-search-feature-description": "External Search for now supports only Support's xWiki",
+	"toggle-pref-external-search": "Search on external sites"
+}

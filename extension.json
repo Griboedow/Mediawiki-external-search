@@ -1,0 +1,56 @@
+{
+	"name": "External search",
+	"version": "0.1.0",
+	"author": [
+		"Nikolai Kochkin"
+	],
+	"url": "https://medium.com/@urlfberht",
+	"descriptionmsg": "external-search-desc",
+	"type": "other",
+	"APIListModules": {
+		"ExternalSearch": "ApiQueryExternalSearch"
+	},
+	"MessagesDirs": {
+		"ExternalSearch": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"ExternalSearchHooks": "ExternalSearch.hooks.php",
+		"ApiQueryExternalSearch": "api/ApiQueryExternalSearch.php"
+	},
+	"ResourceModules": {
+		"ext.ExternalSearch.xWiki": {
+			"scripts": [
+				"js/addXwikiResults.js"
+			],
+			"styles": [
+				"css/externalSearchStyles.css"
+			],
+			"dependencies": [
+				"mediawiki.util",
+				"mediawiki.user",
+				"mediawiki.Title"
+			]
+		},
+		"ext.ExternalSearch.init": {
+			"scripts": "js/addXwikiResults.init.js",
+			"dependencies": [
+				"ext.ExternalSearch.xWiki"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "ExternalSearchExternalSearch"
+	},
+	"Hooks": {
+		"BeforePageDisplay": "ExternalSearchHooks::onBeforePageDisplay"
+	},
+	"config": {
+		"EnableExternalSearch": {
+			"value": true
+		}
+	},
+	"manifest_version": 2
+}
